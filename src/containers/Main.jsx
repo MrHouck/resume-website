@@ -4,7 +4,7 @@ import {motion} from "motion/react"
 import Image from "next/image";
 import { slideUp } from "@/utils/animations";
 import { DM_MONO_FAMILY, LOCATION_TEXT, TITLE_TEXT } from "@/utils/constants";
-import ActionButtons from "@/components/ActionButtons";
+import ActionButtons from "@/containers/ActionButtons";
 export default function Main(){
     return (
         <main className="relative flex flex-col items-center self-stretch gap-4">
@@ -12,6 +12,7 @@ export default function Main(){
                     <Image
                         className="w-[200px] h-[200px] rounded-full"
                         src="/headshot.jpg"
+                        priority
                         width="200"
                         height="200"
                         alt="Headshot"

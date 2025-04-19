@@ -11,13 +11,9 @@ const AppProvider = ({children}) => {
     const router = useRouter();
     const pathName = usePathname();
 
-    const [pageAnimate, setPageAnimate] = useState(false);
     const [href, setHref] = useState(null);
     const [navbarRouteState, setNavbarRouteState] = useState(pathName);
 
-    const togglePageAnimate = () => {
-        setPageAnimate(!pageAnimate);
-    }
 
     const isSameRoute = (thisHref, route = null) => {
         const currentRoute = route || pathName;
@@ -27,7 +23,7 @@ const AppProvider = ({children}) => {
     
     const handlePageChange = (immediateHref) => {
         const toHref = immediateHref || href;
-        if (toHref !== null && isSameRoute(toHref)) {
+        if (toHref !== null && !isSameRoute(toHref)) {
             router.push(toHref);
         }
     }
@@ -40,9 +36,7 @@ const AppProvider = ({children}) => {
 
     return (<AppContext.Provider
             value ={{
-                pageAnimate,
                 isSameRoute,
-                togglePageAnimate,
                 navbarRouteState,
                 setNavbarRouteState,
                 setHref,

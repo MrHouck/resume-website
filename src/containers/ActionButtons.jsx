@@ -25,7 +25,7 @@ const ActionButtons = () => {
                 variants={slideLeft}
                 initial="hidden"
                 animate={slide ? "visible" : "hidden"}
-                className="self-stretch h-[38px] px-11 py-2 cursor-pointer bg-[var(--active)] text-[#292929] rounded-lg justify-center items-center gap-2.5 flex border border-border "
+                className="self-stretch h-[38px] px-11 py-2 cursor-pointer bg-[var(--active)] text-[var(--button-text)] rounded-lg justify-center items-center gap-2.5 flex border border-border "
                 whileHover={{ scale: 1.05, translateY: -4 }}
                 whileTap={{ scale: 0.95, translateY: -2 }}
 
@@ -43,7 +43,7 @@ const ActionButtons = () => {
             whileTap={{ scale: 0.95, translateY: -2 }}
             href="/NathanHouck-Resume (nathanhouck.com).pdf"
             expandclassname="bg-fg rounded-lg"
-            className="self-stretch h-[38px] px-11 py-2 cursor-pointer bg-[#303030] rounded-lg border-border justify-center items-center gap-2.5 flex"
+            className="self-stretch h-[38px] px-11 py-2 cursor-pointer bg-[var(--secondary-button)] rounded-lg border-border justify-center items-center gap-2.5 flex"
         >
             <p className="text-base font-light text-pg " variants={slideUp}>
             Get full resume

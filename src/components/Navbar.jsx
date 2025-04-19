@@ -12,22 +12,22 @@ import { DynamicIcon } from "lucide-react/dynamic";
 const Navbar = () => {
     const {
         isSameRoute,
-        pageAnimate,
-        togglePageAnimate,
         setHref,
         setNavbarRouteState,
         navbarRouteState,
+        handlePageChange,
     } = useAppContext();
 
     const handleClick = (href) => {
-        if((!isSameRoute(href) && pageAnimate) || isSameRoute(href)) {
+      
+        if((!isSameRoute(href) && true) || isSameRoute(href)) {
             setNavbarRouteState(href);
             setHref(href);
-            togglePageAnimate();
+            handlePageChange(href);
         }
     }
     return (
-        <header className="fixed bottom-0 z-20 flex items-center justify-center w-screen h-16 py-0 border-t border-border bg-bg lg:top-0 lg:border-r lg:border-t-0 lg:w-16 lg:h-full lg:flex-col lg:py-4">
+        <header className="fixed bottom-0 z-20 flex items-center justify-center w-screen h-16 py-0 border-t border-[var(--border)] bg-[var(--bg)] lg:top-0 lg:border-r lg:border-t-0 lg:w-16 lg:h-full lg:flex-col lg:py-4">
           <nav>
             <ul className="flex items-center justify-center w-full h-full gap-2 lg:flex-col ">
               
@@ -42,7 +42,7 @@ const Navbar = () => {
                 >
                   {isSameRoute(route.href, navbarRouteState) && (
                     <motion.div
-                      className="absolute top-0 w-full h-full lg:w-px bg-pg lg:-right-2 !opacity-10 lg:!opacity-100 right-0 rounded-lg"
+                      className="absolute top-0 w-full h-full lg:w-px lg:-right-2 !opacity-10 lg:!opacity-100 right-0 rounded-lg"
                       layoutId="line"
                     />
                     
@@ -79,18 +79,17 @@ const IconButton = ({
       <li>
         <a
           href={href}
-          className={`relative block p-3 cursor-pointer ${isActive ? "#d3d3d3" : "#707070"} rounded-md`}
+          className={`relative block p-3 cursor-pointer rounded-md`}
           aria-label={tooltip}
           id={tooltip}
           onClick={(e) => {
-            console.log('hi')
             e.preventDefault();
             handleClick(href);
           }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <DynamicIcon name={iconNode} size={iconSize} strokeWidth={1.5}/>
+          <DynamicIcon name={iconNode} size={iconSize} strokeWidth={1.5} color={isActive ? "#d3d3d3" : "#707070"}/>
           {children}
           <Tooltip
             hoveredState={isHovered}
