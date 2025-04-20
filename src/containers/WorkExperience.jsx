@@ -24,9 +24,9 @@ export default function WorkExperience(){
                                     className="text-lg font-light tracking-widest uppercase text-[var(--primary-text)] lg:tracking-normal lg:normal-case lg:text-left"
                                     initial={{opacity:0, translateX: -25}}
                                     animate={{opacity:1, translateX: 0}}
-                                    transition={{duration: 0.3, delay: i*0.5+WORK_EXPERIENCES.length*0.5}}
+                                    transition={{duration: 1, delay: i/2}}
                                 >
-                                    {experience.company}
+                                    <a href={experience.url}>{experience.company}</a>
                                 </motion.h2>
                                 <div className="flex flex-col text-right">
                                     <p className="text-[var(--nav-button)]">{experience.title}</p>

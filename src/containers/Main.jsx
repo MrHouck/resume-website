@@ -1,6 +1,6 @@
 "use client";
 
-import {motion} from "motion/react"
+import { motion } from "motion/react";
 import Image from "next/image";
 import { slideUp } from "@/utils/animations";
 import { DM_MONO_FAMILY, LOCATION_TEXT, TITLE_TEXT } from "@/utils/constants";
@@ -9,14 +9,7 @@ export default function Main(){
     return (
         <main className="relative flex flex-col items-center self-stretch gap-4">
             <motion.div className="flex flex-col items-center self-stretch gap-4" variants={slideUp}>
-                    <Image
-                        className="w-[200px] h-[200px] rounded-full"
-                        src="/headshot.jpg"
-                        priority
-                        width="200"
-                        height="200"
-                        alt="Headshot"
-                    />
+                <img src="/headshot.jpg" alt="avatar" className="w-[200px] h-[200px] rounded-full" width="200" height="200"/>
             </motion.div>
             <div className="flex flex-col items-center self-stretch justify-start gap-5">
                 <motion.div

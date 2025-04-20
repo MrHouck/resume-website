@@ -1,5 +1,7 @@
 "use client";
 
+
+import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, useState } from "react";
 
@@ -13,6 +15,7 @@ const AppProvider = ({children}) => {
 
     const [href, setHref] = useState(null);
     const [navbarRouteState, setNavbarRouteState] = useState(pathName);
+    const {theme, setTheme} = useTheme();
 
 
     const isSameRoute = (thisHref, route = null) => {
@@ -25,6 +28,15 @@ const AppProvider = ({children}) => {
         const toHref = immediateHref || href;
         if (toHref !== null && !isSameRoute(toHref)) {
             router.push(toHref);
+        }
+    }
+    
+    const handleToggleTheme = () => {
+        console.log(theme)
+        if(theme == "dark") {
+            setTheme("light");
+        } else {
+            setTheme("dark");
         }
     }
 
@@ -41,7 +53,8 @@ const AppProvider = ({children}) => {
                 setNavbarRouteState,
                 setHref,
                 handlePageChange,
-                handleDirectPageChange
+                handleDirectPageChange,
+                handleToggleTheme
             }}
         >
             {children}

@@ -16,6 +16,7 @@ const Navbar = () => {
         setNavbarRouteState,
         navbarRouteState,
         handlePageChange,
+        handleToggleTheme
     } = useAppContext();
 
     const handleClick = (href) => {
@@ -42,7 +43,7 @@ const Navbar = () => {
                 >
                   {isSameRoute(route.href, navbarRouteState) && (
                     <motion.div
-                      className="absolute top-0 w-full h-full lg:w-px lg:-right-2 !opacity-10 lg:!opacity-100 right-0 rounded-lg"
+                      className="absolute top-0 w-full h-full lg:w-px lg:-right-2 !opacity-10 lg:!opacity-100 right-0 rounded-lg bg-[var(--nav-active)]"
                       layoutId="line"
                     />
                     
@@ -51,6 +52,13 @@ const Navbar = () => {
               ))}
             </ul>
           </nav>
+          <ul className="absolute lg:bottom-4 right-4 lg:right-auto">
+              <IconButton tooltip="Toggle theme"
+                icon="sun-moon"
+                iconSize="1.5rem"
+                handleClick={handleToggleTheme}
+                />
+            </ul>
         </header>
       );
 }
@@ -89,7 +97,7 @@ const IconButton = ({
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <DynamicIcon name={iconNode} size={iconSize} strokeWidth={1.5} color={isActive ? "#d3d3d3" : "#707070"}/>
+          <DynamicIcon name={iconNode} size={iconSize} strokeWidth={1.5} color={isActive ? "var(--active)" : "var(--inactive)"}/>
           {children}
           <Tooltip
             hoveredState={isHovered}

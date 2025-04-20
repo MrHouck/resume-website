@@ -23,9 +23,9 @@ export default function Education(){
                                     className="text-lg font-light tracking-widest uppercase text-[var(--primary-text)] lg:tracking-normal lg:normal-case lg:text-left mr-4"
                                     initial={{opacity:0, translateX: -25}}
                                     animate={{opacity:1, translateX: 0}}
-                                    transition={{duration: 0.3, delay: i*0.5+EDUCATION.length*0.5}}
+                                    transition={{duration: 1, delay: i/2}}
                                 >
-                                    {education.school}
+                                    <a href={education.url}>{education.school}</a>
                                 </motion.h2>
                                 <div className="flex flex-col text-right">
                                     <p className="text-[var(--nav-button)]">{education.gpa}</p>

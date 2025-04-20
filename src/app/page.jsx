@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import PageWrapper from "@/components/PageWrapper";
 import RegularLayout from "@/components/RegularLayout";
 import Main from "@/containers/Main";
 
-import { slideLeft, slideUp } from "@/utils/animations";
+import { slideRight, slideUp } from "@/utils/animations";
 import { ABOUT_ME } from "@/utils/constants";
 import SectionPointer from "@/components/SectionPointer";
 import { motion } from "motion/react";
@@ -19,7 +21,13 @@ export default function Home() {
           <section className="">
             <div>
               <SectionPointer>About</SectionPointer>
-              <p className="text-base font-light leading-relaxed mb-5 whitespace-pre-wrap">{ABOUT_ME}</p>
+              <motion.p 
+                className="text-base font-light leading-relaxed mb-5 whitespace-pre-wrap"
+                variants={slideUp}
+              >
+                  {ABOUT_ME}
+
+              </motion.p>
               {/* <motion.p 
                 variants={slideLeft}
                 initial="hidden"

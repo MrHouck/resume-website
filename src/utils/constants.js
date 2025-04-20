@@ -18,6 +18,7 @@ export const WORK_EXPERIENCES = [
       title: "Mechanical Engineer (Club)",
       company: "Autonomous Maritime Robotics Association",
       time: "August 2024 | August 2025",
+      url: "https://amraerau.org",
       responsibilities: [
           "Led a team to design a minimal-cost electronics cooling solution within the submarine to reduce internal temperatures by over 60°F",
           "Worked with a team of 4 to design, prototype, and manufacture an improved thruster mount",
@@ -31,6 +32,7 @@ export const WORK_EXPERIENCES = [
       title: "Customer Service Associate",
       company: "Wawa, Inc.",
       time: "July 2022 | August 2023",
+      url: "https://www.wawa.com",
       responsibilities: [
           "Wawa, Inc. Customer Service Award -- Day Brightener, April 2023",
           "Worked in a fast-paced environment on a strict schedule to serve high-quality products to over 500 people in one shift",
@@ -43,6 +45,7 @@ export const WORK_EXPERIENCES = [
       title: "Lifeguard",
       company: "Greater Philadelphia YMCA",
       time: "Feb 2023 | August 2023",
+      url: "https://www.philaymca.org",
       responsibilities: [
           "Conducted regular pool inspections to ensure a safe and nonhazardous environment for guests",
           "Maintained compliance with Red Cross CPR, AED, and lifeguarding certifications",
@@ -57,6 +60,7 @@ export const EDUCATION = [
     school: "Embry-Riddle Aeronautical University",
     time: "Aug 2023 | May 2027",
     gpa: "GPA: 3.76/4.00",
+    url: "https://erau.edu",
     activities: [
       "B.S. Aerospace Engineering | Astronautics Track           ",
       "Autonomous Maritime Robotics Association (AMRA)           ",  
@@ -69,6 +73,7 @@ export const EDUCATION = [
     school: "West Chester Bayard Rustin High School",
     time: "Aug 2019 | May 2023",
     gpa: "GPA: 4.40/5.00",
+    url: "https://rhs.wcasd.net",
     activities: [
       "National Honor Society                                   ",
       "German National Honor Society                            ",

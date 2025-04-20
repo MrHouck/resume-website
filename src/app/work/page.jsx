@@ -10,8 +10,8 @@ import { motion } from "motion/react";
 import NavButton from "@/components/NavButton";
 import WorkExperience from "@/containers/WorkExperience";
 
-
 export default function Work() {
+
   return (
     <PageWrapper>
       <RegularLayout>
