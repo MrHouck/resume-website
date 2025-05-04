@@ -12,7 +12,11 @@ const ROUTES = [
     {
         href: '/edu',
         icon: "graduation-cap"
-    }
+    },
+    {
+        href: 'https://musings.nathanhouck.com',
+        icon: "pencil-line"
+    },
 ]
 
 export default ROUTES;

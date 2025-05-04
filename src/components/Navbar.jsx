@@ -51,6 +51,7 @@ const Navbar = () => {
                 </IconButton>
               ))}
             </ul>
+            
           </nav>
           <ul className="absolute lg:bottom-4 right-4 lg:right-auto">
               <IconButton tooltip="Toggle theme"
@@ -59,6 +60,7 @@ const Navbar = () => {
                 handleClick={handleToggleTheme}
                 />
             </ul>
+          
         </header>
       );
 }

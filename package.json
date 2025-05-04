@@ -11,6 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@mui/material": "^7.0.2",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "lucide": "^0.501.0",
     "lucide-react": "^0.501.0",
     "motion": "^12.7.4",
