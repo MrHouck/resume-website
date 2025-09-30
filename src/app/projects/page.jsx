@@ -1,0 +1,27 @@
+import Image from "next/image";
+import PageWrapper from "@/components/PageWrapper";
+import RegularLayout from "@/components/RegularLayout";
+import Main from "@/containers/Main";
+
+import { slideLeft, slideUp } from "@/utils/animations";
+import { ABOUT_ME } from "@/utils/constants";
+import SectionPointer from "@/components/SectionPointer";
+import { motion } from "motion/react";
+import NavButton from "@/components/NavButton";
+import ProjectsContainer from "@/containers/Projects";
+
+
+export default function Projects() {
+    return (
+        <PageWrapper>
+            <RegularLayout>
+                <div className="flex flex-col items-center justify-center lg:min-h-[85vh] first:mb-5 last:mb-0">
+                    <NavButton pageName="About Me" direction="up" href="/" />
+                    <ProjectsContainer />
+                    <NavButton pageName="Work Experience" direction="down" href="/work" />
+
+                </div>
+            </RegularLayout>
+        </PageWrapper>
+    );
+}

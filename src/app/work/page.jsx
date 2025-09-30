@@ -16,7 +16,7 @@ export default function Work() {
     <PageWrapper>
       <RegularLayout>
         <div className="flex flex-col items-center first:mb-5 last:mb-0">
-          <NavButton pageName="About Me" direction="up" href="/"/>
+          <NavButton pageName="Projects" direction="up" href="/projects"/>
           <WorkExperience/>
           <NavButton pageName="Education" direction="down" href="/edu"/>
         </div>

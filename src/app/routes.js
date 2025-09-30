@@ -1,9 +1,11 @@
-import { GraduationCap, User, Briefcase } from "lucide";
-
 const ROUTES = [
     {
         href: '/',
         icon: "user"
+    },
+    {
+        href: '/projects',
+        icon: "settings"
     },
     {  
         href: '/work',

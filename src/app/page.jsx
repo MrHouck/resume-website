@@ -38,7 +38,7 @@ export default function Home() {
               </motion.p> */}
             </div>
           </section>
-          <NavButton pageName="Work Experience" direction="down" href="/work"/>
+          <NavButton pageName="Projects" direction="down" href="/projects"/>
         </div>
       </RegularLayout>
     </PageWrapper>

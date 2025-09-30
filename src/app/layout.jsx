@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
         <body className={`${FAMILY.className} w-screen overflow-x-hidden h-screen text-[var(--primary-text)] bg-[var(--bg)] transition-colors`}>
-        <ThemeProvider attribute="class" className="dark">
+        <ThemeProvider attribute="class" className="dark" suppressHydrationWarning>
           <AppProvider>
             <Navbar/>
             
