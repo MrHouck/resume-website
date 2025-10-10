@@ -87,7 +87,7 @@ export const EDUCATION = [
     url: "https://erau.edu",
     activities: [
       "B.S. Aerospace Engineering | Astronautics Track           ",
-      "Icarus Sounding Rocket Program (ISRP)                     ",
+      "Experimental Jet Engine Propulsion (XJEP)                 ",
       "Autonomous Maritime Robotics Association (AMRA)           ",  
       "Diving Eagles Scuba Club (DESC)                           ",
       "American Institute of Aeronautics and Astronautics (AIAA) "
