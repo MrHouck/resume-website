@@ -1,10 +1,16 @@
-import { DM_Mono, Ubuntu } from "next/font/google";
-export const DM_MONO_FAMILY = DM_Mono({weight: "300", subsets: ["latin"]});
-export const FAMILY = Ubuntu({
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "700"],
-  });
+import { DM_Mono, Ubuntu, Merriweather } from "next/font/google";
 
+export const DM_MONO_FAMILY = DM_Mono({ weight: "300", subsets: ["latin"] });
+export const FAMILY = Ubuntu({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+});
+
+export const MERRIWEATHER_FAMILY = Merriweather({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  style: ["normal", "italic"],
+});
 export const TITLE_TEXT = "Aerospace Engineering Student";
 export const LOCATION_TEXT = "Daytona Beach, FL | West Chester PA";
 
@@ -19,23 +25,23 @@ export const PROJECTS_INFO = [
     time: "August 2024 | August 2025",
     url: "https://amraerau.org",
     responsibilities: [
-        "Led a team to design a minimal-cost electronics cooling solution within the submarine to reduce internal temperatures by over 60°F",
-        "Worked with a team of 4 to design, prototype, and manufacture an improved thruster mount, reducing lateral movement",
-        "Designed and modeled a torpedo launching system",
-        "Prototyped a bin that releases weighted bags over a designated drop zone utilizing torsion springs and servo motors",
-        "Created an IP68 compliant waterproof servo housing for a DS3225 servo motor utilizing o-rings and shaft seals",
+      "Led a team to design a minimal-cost electronics cooling solution within the submarine to reduce internal temperatures by over 60°F",
+      "Worked with a team of 4 to design, prototype, and manufacture an improved thruster mount, reducing lateral movement",
+      "Designed and modeled a torpedo launching system",
+      "Prototyped a bin that releases weighted bags over a designated drop zone utilizing torsion springs and servo motors",
+      "Created an IP68 compliant waterproof servo housing for a DS3225 servo motor utilizing o-rings and shaft seals",
     ]
   },
   {
     id: 2,
     title: "Undergraduate Researcher",
     org: "Embry-Riddle Aeronautical University",
-    time: "August 2025 | Present",
+    time: "August 2025 | December 2025",
     url: "https://daytonabeach.erau.edu/about/labs/thermal-laboratory",
     responsibilities: [
-        "Collaborating with students from Insituto Technológico de Aeronáutica to create a flow visualization model to study the behavior of phase change materials (PCM)",
-        "Created a test section in Autodesk Inventor to contain the PCM and allow it to be oriented at any angle",
-        "The test section simulates a constant heat flux boundary condition and a constant temperature boundary condition",
+      "Collaborated with students from Insituto Technológico de Aeronáutica to create a flow visualization model to study the behavior of phase change materials (PCM)",
+      "Created a test section in Autodesk Inventor to contain the PCM and allow it to be oriented at any angle",
+      "The test section simulates a constant heat flux boundary condition and a constant temperature boundary condition",
     ],
   },
   {
@@ -52,35 +58,47 @@ export const PROJECTS_INFO = [
 ]
 export const WORK_EXPERIENCES = [
   {
-      id: 1,
-      title: "Customer Service Associate",
-      company: "Wawa, Inc.",
-      time: "July 2022 | Present",
-      url: "https://www.wawa.com",
-      responsibilities: [
-          "Wawa, Inc. Customer Service Award -- Day Brightener, April 2023",
-          "Work in a fast-paced environment on a strict schedule to serve high-quality products to over 500 people in one shift",
-          "Handle day-to-day operations of the store, including the sales floor, deli area, and cash register.",
-          "Train new sales associates on customer service skills and company policies."
-      ]
+    id: 1,
+    title: "Grading Assistant",
+    company: "Embry-Riddle Aeronautical University",
+    time: "January 2026 | Present",
+    url: "https://erau.edu",
+    responsibilities: [
+      "Grading and evaluating homework assignments for AE319 Aerodynamics, ensuring accuracy and adherence to course standards.",
+      "Providing written feedback to support student understanding.",
+      "Maintaining organized grading records and meeting strict deadlines outlined by the course instructor."
+    ],
   },
   {
-      id: 2,
-      title: "Lifeguard",
-      company: "Greater Philadelphia YMCA",
-      time: "Feb 2023 | August 2023",
-      url: "https://www.philaymca.org",
-      responsibilities: [
-          "Conducted regular pool inspections to ensure a safe and nonhazardous environment for guests",
-          "Maintained compliance with Red Cross CPR, AED, and lifeguarding certifications",
-          "Demonstrated strong interpersonal skills by effectively communicating with both guests and other team members",
-      ]
+    id: 2,
+    title: "Customer Service Associate",
+    company: "Wawa, Inc.",
+    time: "July 2022 | Present",
+    url: "https://www.wawa.com",
+    responsibilities: [
+      "Wawa, Inc. Customer Service Award -- Day Brightener, April 2023",
+      "Work in a fast-paced environment on a strict schedule to serve high-quality products to over 500 people in one shift",
+      "Handle day-to-day operations of the store, including the sales floor, deli area, and cash register.",
+      "Train new sales associates on customer service skills and company policies."
+    ]
+  },
+  {
+    id: 3,
+    title: "Lifeguard",
+    company: "Greater Philadelphia YMCA",
+    time: "Feb 2023 | August 2023",
+    url: "https://www.philaymca.org",
+    responsibilities: [
+      "Conducted regular pool inspections to ensure a safe and nonhazardous environment for guests",
+      "Maintained compliance with Red Cross CPR, AED, and lifeguarding certifications",
+      "Demonstrated strong interpersonal skills by effectively communicating with both guests and other team members",
+    ]
   },
 ];
 
 export const EDUCATION = [
   {
-    id:1,
+    id: 1,
     school: "Embry-Riddle Aeronautical University",
     time: "Aug 2023 | May 2027",
     gpa: "GPA: 3.76/4.00",
@@ -88,13 +106,13 @@ export const EDUCATION = [
     activities: [
       "B.S. Aerospace Engineering | Astronautics Track           ",
       "Experimental Jet Engine Propulsion (XJEP)                 ",
-      "Autonomous Maritime Robotics Association (AMRA)           ",  
+      "Autonomous Maritime Robotics Association (AMRA)           ",
       "Diving Eagles Scuba Club (DESC)                           ",
       "American Institute of Aeronautics and Astronautics (AIAA) "
     ]
   },
   {
-    id:2,
+    id: 2,
     school: "West Chester Bayard Rustin High School",
     time: "Aug 2019 | May 2023",
     gpa: "GPA: 4.40/5.00",

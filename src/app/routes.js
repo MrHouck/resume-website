@@ -16,7 +16,7 @@ const ROUTES = [
         icon: "graduation-cap"
     },
     {
-        href: 'https://musings.nathanhouck.com',
+        href: '/insights',
         icon: "pencil-line"
     },
 ]

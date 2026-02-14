@@ -19,7 +19,7 @@ export default function WorkExperience(){
                         transition={{duration: 0.3, delay: i*0.5}}
                     >
                         <section className="flex flex-col items-center">
-                            <div className="flex flex-row justify-between items-center w-full border-b border-[var(--border)] pb-4 mb-4 lg:p-0 lg:mb-0 lg:top-auto lg:border-b-0">
+                            <div className="flex flex-row justify-between items-center w-full border-b border-[var(--border)] pb-4 mb-4 lg:p-0 lg:mb-0 lg:top-auto">
                                 <motion.h2 
                                     className="text-lg font-light tracking-widest uppercase text-[var(--primary-text)] lg:tracking-normal lg:normal-case lg:text-left"
                                     initial={{opacity:0, translateX: -25}}

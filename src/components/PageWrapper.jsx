@@ -6,7 +6,7 @@ import { useAppContext } from "@/app/provider";
 
 export default function PageWrapper({children, ...props}) {
     const [hide, setHide] = useState(false);
-    const { handlePageChange, isFunnyToggle } = useAppContext();
+    const { handlePageChange } = useAppContext();
 
     return <motion.div
             className="items-center justify-center mb-16 overflow-hidden lg:mb-0 lg:ml-16"

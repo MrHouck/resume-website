@@ -5,6 +5,9 @@ import Image from "next/image";
 import { slideUp } from "@/utils/animations";
 import { DM_MONO_FAMILY, LOCATION_TEXT, TITLE_TEXT } from "@/utils/constants";
 import ActionButtons from "@/containers/ActionButtons";
+
+
+
 export default function Main(){
     return (
         <main className="relative flex flex-col items-center self-stretch gap-4">
