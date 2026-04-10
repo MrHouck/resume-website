@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { slideSpring, slideUp } from "@/utils/animations";
 
-const InsightsSidebar = ({ title, isOpen, setIsOpen, children }) => {
+const MusingsSidebar = ({ title, isOpen, setIsOpen, children }) => {
     return (
         <>
             <div className="fixed top-0 z-40 flex items-center justify-between w-screen h-16 px-4 border-[var(--border)] lg:hidden border-border bg-[var(--bg)] lg:top-0 lg:border-r lg:border-t-0 lg:w-16 lg:h-full lg:flex-col">
@@ -41,4 +41,4 @@ const InsightsSidebar = ({ title, isOpen, setIsOpen, children }) => {
         </>
     )
 }
-export default InsightsSidebar;
+export default MusingsSidebar;

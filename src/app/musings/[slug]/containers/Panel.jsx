@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import InsightsSidebar from "@/components/InsightsSidebar";
+import MusingsSidebar from "@/components/MusingsSidebar";
 import { useAppContext } from "@/app/provider";
 import { slideUp, slideSpring } from "@/utils/animations";
 import { motion } from "motion/react";
@@ -25,13 +25,13 @@ const Panel = ({ currentPost, posts }) => {
     posts = sortPostsAroundCurrent(posts, currentPost);
 
     return (
-        <InsightsSidebar title="Insights" isOpen={isPanelOpen} setIsOpen={setIsPanelOpen}>
+        <MusingsSidebar title="Musings" isOpen={isPanelOpen} setIsOpen={setIsPanelOpen}>
             <nav aria-label="Blog posts navigation">
                 <motion.h2
                     variants={slideUp}
                     className="pl-3 mb-1 text-base font-light text-white"
                 >
-                    Insights
+                    Musings
                 </motion.h2>
                 <section aria-label="Current post" className="border-b border-[var(--border)]">
                     <motion.h3
@@ -68,10 +68,10 @@ const Panel = ({ currentPost, posts }) => {
                         {posts.map((post) => (
                             <li key={post.slug}>
                                 <motion.a
-                                    href={`/insights/${post.slug}`}
+                                    href={`/musings/${post.slug}`}
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        handlePageChange(`/insights/${post.slug}`)
+                                        handlePageChange(`/musings/${post.slug}`)
                                     }}
                                     variants={slideSpring["left"]}
                                     whileHover={{ scale: 1.02 }}
@@ -96,7 +96,7 @@ const Panel = ({ currentPost, posts }) => {
                 </section>
             </nav>
 
-        </InsightsSidebar>
+        </MusingsSidebar>
 
     )
 

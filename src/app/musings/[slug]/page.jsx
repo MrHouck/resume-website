@@ -4,7 +4,6 @@ import { MERRIWEATHER_FAMILY, DM_MONO_FAMILY } from "@/utils/constants";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import mdxComponents from "@/components/mdx-components";
 import Panel from "./containers/Panel";
-
 export function generateStaticParams() {
     const slugs = getAllPostSlugs();
     return slugs.map((slug) => ({ slug }));
@@ -20,12 +19,12 @@ export async function generateMetadata({params: paramsPromise}) {
         description: post.description || "",
         keywords: post.keywords || [],
         alternates: {
-            canonical: `https://nathanhouck.com/insights/${post.slug}`,
+            canonical: `https://nathanhouck.com/musings/${post.slug}`,
         },
         openGraph: {
             title: post.title,
             description: post.description || "",
-            url: `https://nathanhouck.com/insights/${post.slug}`,
+            url: `https://nathanhouck.com/musings/${post.slug}`,
             type: "article",
         },
         twitter: {
@@ -72,5 +71,6 @@ export default async function PostPage({ params: paramsPromise }) {
                 </article>
             </div>
         </PageWrapper>
+        
     );
 }

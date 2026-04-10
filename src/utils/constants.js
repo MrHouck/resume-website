@@ -73,7 +73,7 @@ export const WORK_EXPERIENCES = [
     id: 2,
     title: "Customer Service Associate",
     company: "Wawa, Inc.",
-    time: "July 2022 | Present",
+    time: "July 2022 | April 2026",
     url: "https://www.wawa.com",
     responsibilities: [
       "Wawa, Inc. Customer Service Award -- Day Brightener, April 2023",

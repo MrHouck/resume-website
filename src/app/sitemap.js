@@ -17,7 +17,7 @@ export default async function sitemap() {
           const stats = await fs.stat(path.join(POSTS_DIR, file));
 
           return {
-            url: `${BASE_URL}/insights/${slug}`, // blog posts
+            url: `${BASE_URL}/musings/${slug}`, // blog posts
             lastModified: stats.mtime.toISOString(),
             priority: 0.5,
           };

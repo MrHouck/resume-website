@@ -16,7 +16,7 @@ const ROUTES = [
         icon: "graduation-cap"
     },
     {
-        href: '/insights',
+        href: '/musings',
         icon: "pencil-line"
     },
 ]

@@ -26,6 +26,7 @@ const mdxComponents = {
 
     return <p className="mb-5 text-[var(--secondary)]" {...props} />;
   },
+  
 
   a: (props) => (
     <span className="inline-block md-link-animation text-gray-400">
