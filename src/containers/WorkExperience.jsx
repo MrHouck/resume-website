@@ -1,49 +1,40 @@
 "use client";
 
-import {motion} from "motion/react"
-import Image from "next/image";
-import { slideUp } from "@/utils/animations";
-import { DM_MONO_FAMILY, LOCATION_TEXT, TITLE_TEXT } from "@/utils/constants";
-import ActionButtons from "@/containers/ActionButtons";
-import { WORK_EXPERIENCES } from "@/utils/constants";
-import SectionPointer from "@/components/SectionPointer";
+import { motion } from "motion/react";
+import { slideUp, staggerParent } from "@/utils/animations";
+import { JETBRAINS_MONO, SOURCE_SERIF, WORK_EXPERIENCES } from "@/utils/constants";
 
-export default function WorkExperience(){
-    return (
-        <main className="relative flex flex-col items-center self-stretch gap-4 pt-10">
-            {WORK_EXPERIENCES.map((experience, i) => (
-                <div key={i}>
-                    <motion.div 
-                        initial={{opacity: 0, translateX: 50}}
-                        animate={{opacity: 1, translateX: 0}}
-                        transition={{duration: 0.3, delay: i*0.5}}
-                    >
-                        <section className="flex flex-col items-center">
-                            <div className="flex flex-row justify-between items-center w-full border-b border-[var(--border)] pb-4 mb-4 lg:p-0 lg:mb-0 lg:top-auto">
-                                <motion.h2 
-                                    className="text-lg font-light tracking-widest uppercase text-[var(--primary-text)] lg:tracking-normal lg:normal-case lg:text-left"
-                                    initial={{opacity:0, translateX: -25}}
-                                    animate={{opacity:1, translateX: 0}}
-                                    transition={{duration: 1, delay: i/2}}
-                                >
-                                    <a href={experience.url}>{experience.company}</a>
-                                </motion.h2>
-                                <div className="flex flex-col text-right">
-                                    <p className="text-[var(--nav-button)]">{experience.title}</p>
-                                    <p className="text-[var(--background-text)] text-sm">{experience.time}</p>
-                                </div>
-                            </div>
-
-                            <ul className="pt-0 text-[var(--secondary-text)] mt-2 list-disc list-inside space-y-2">
-                                {experience.responsibilities.map((responsibility, i) => (
-                                    <li key={i}>{responsibility}</li>
-                                ))}
-
-                            </ul>
-                        </section>
-                    </motion.div>
-                </div>
-            ))}
-        </main>
-    )
+export default function WorkExperience() {
+  return (
+    <section className="flex flex-col w-full pt-6">
+      <h2 className={`${SOURCE_SERIF.className} text-[28px] font-normal text-(--primary-text) border-b border-(--border) pb-4 mb-2`}>
+        Work
+      </h2>
+      <motion.div className="flex flex-col" variants={staggerParent(0.08)}>
+        {WORK_EXPERIENCES.map((exp) => (
+          <motion.div
+            key={exp.id}
+            variants={slideUp}
+            className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 py-4 border-b border-(--border) last:border-b-0"
+          >
+            <div className="flex flex-col gap-0.5 flex-1">
+              <p className="text-[14px] text-(--primary-text)">
+                {exp.title}
+                <span className="text-(--tertiary-text)"> · </span>
+                <a href={exp.url} className="text-(--secondary-text) hover:text-(--accent) transition-colors">
+                  {exp.company}
+                </a>
+              </p>
+              <p className={`${SOURCE_SERIF.className} text-[14px] leading-relaxed text-(--secondary-text)`}>
+                {exp.summary}
+              </p>
+            </div>
+            <p className={`${JETBRAINS_MONO.className} text-[10px] tracking-wide text-(--tertiary-text) sm:text-right sm:pl-8 shrink-0`}>
+              {exp.time}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
 }

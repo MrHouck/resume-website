@@ -28,14 +28,14 @@ const Navbar = () => {
         }
     }
     return (
-        <header className="fixed bottom-0 z-20 flex items-center justify-center w-screen h-16 py-0 border-t border-[var(--border)] bg-[var(--bg)] lg:top-0 lg:border-r lg:border-t-0 lg:w-16 lg:h-full lg:flex-col lg:py-4">
+        <header className="fixed bottom-0 z-20 flex items-center justify-center w-screen h-16 py-0 border-t border-(--border) bg-(--bg) lg:top-0 lg:border-r lg:border-t-0 lg:w-16 lg:h-full lg:flex-col lg:py-4">
           <nav>
             <ul className="flex items-center justify-center w-full h-full gap-2 lg:flex-col ">
               
               {ROUTES.map((route, index) => (
                 <IconButton
                   isActive={isSameRoute(route.href)}
-                  tooltip={route.href}
+                  tooltip={route.label}
                   icon={route.icon}
                   handleClick={handleClick}
                   href={route.href}
@@ -43,7 +43,7 @@ const Navbar = () => {
                 >
                   {isSameRoute(route.href, navbarRouteState) && (
                     <motion.div
-                      className="absolute top-0 w-full h-full lg:w-px lg:-right-2 !opacity-10 lg:!opacity-100 right-0 rounded-lg bg-[var(--nav-active)]"
+                      className="absolute top-0 w-full h-full lg:w-px lg:-right-2 opacity-10! lg:opacity-100! right-0 rounded-lg bg-(--nav-active)"
                       layoutId="line"
                     />
                     

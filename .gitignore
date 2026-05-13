@@ -41,10 +41,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-jsconfig.json
-package-log.json
-package.json
-pnpm-lock.yaml
-postcss.config.mjs
-tailwind.config.js
-eslint.config.mjs
+# local planning / context docs
+Redesign_Report.md
+NATHAN_CONTEXT.md

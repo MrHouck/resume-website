@@ -9,6 +9,7 @@ export default function PageWrapper({children, ...props}) {
     const { handlePageChange } = useAppContext();
 
     return <motion.div
+            id="main-content"
             className="items-center justify-center mb-16 overflow-hidden lg:mb-0 lg:ml-16"
             style={{display: hide ? "none" : "flex"}}
             initial="hidden"

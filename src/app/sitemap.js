@@ -26,10 +26,11 @@ export default async function sitemap() {
 
     const today = new Date().toISOString();
     const staticPages = [
-      { url: BASE_URL, lastModified: today, priority: 1 }, // landing page
-      { url: `${BASE_URL}/projects`, lastModified: today, priority: 0.8 },
-      { url: `${BASE_URL}/edu`, lastModified: today, priority: 0.8 },
-      { url: `${BASE_URL}/work`, lastModified: today, priority: 0.8 },
+      { url: BASE_URL,                       lastModified: today, priority: 1.0 },
+      { url: `${BASE_URL}/projects`,         lastModified: today, priority: 0.8 },
+      { url: `${BASE_URL}/resume`,           lastModified: today, priority: 0.8 },
+      { url: `${BASE_URL}/musings`,          lastModified: today, priority: 0.7 },
+      { url: `${BASE_URL}/now`,              lastModified: today, priority: 0.6 },
     ];
 
     return [...postUrls, ...staticPages];

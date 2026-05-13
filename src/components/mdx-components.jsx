@@ -1,55 +1,51 @@
-import Image from "next/image";
+import { SOURCE_SERIF, JETBRAINS_MONO } from "@/utils/constants";
+import Bibliography from "@/components/Bibliography";
+import MDXParagraph from "@/components/MDXParagraph";
 
 const mdxComponents = {
-  h1: (props) => <h1 className="mt-2 mb-5 text-xl font-extrabold" {...props} />,
-
-  h2: (props) => (
-    <h2 className="mt-2 mb-5 font-bold text-lg text-gray" {...props} />
+  Bibliography,
+  h1: (props) => (
+    <h1 className={`${SOURCE_SERIF.className} mt-2 mb-5 text-[26px] font-normal tracking-[-0.01em] text-(--primary-text)`} {...props} />
   ),
 
-  h3: (props) => (
-    <h3 className="mt-2 mb-5 text-base font-bold text-md text-gray" {...props} />
+  h2: ({ children, ...props }) => (
+    <div className="mt-10 mb-4">
+      <div className="w-6 h-px bg-(--accent) mb-3" />
+      <h2 className={`${SOURCE_SERIF.className} text-[22px] font-normal tracking-[-0.015em] text-(--primary-text)`} {...props}>{children}</h2>
+    </div>
   ),
 
-  p: (props) => {
-    const hasImage =
-      props.children?.type === "img" ||
-      (typeof props.children === "object" && props.children?.props?.src);
+  h3: ({ children, ...props }) => (
+    <div className="mt-8 mb-3">
+      <h3 className={`${SOURCE_SERIF.className} text-[17px] font-normal text-(--secondary-text)`} {...props}>{children}</h3>
+    </div>
+  ),
 
-    if (hasImage) {
-      return (
-        <div className="flex justify-center w-full mb-5">
-          {props.children}
-        </div>
-      );
-    }
-
-    return <p className="mb-5 text-[var(--secondary)]" {...props} />;
-  },
-  
+  p: MDXParagraph,
 
   a: (props) => (
-    <span className="inline-block md-link-animation text-gray-400">
-      <a className="underline" {...props} />
-    </span>
+    <a
+      className="text-(--primary-text) underline underline-offset-2 decoration-(--accent) hover:text-(--accent) transition-colors"
+      {...props}
+    />
   ),
 
   hr: (props) => (
-    <hr className="mb-5 text-[var(--secondary)] border-darkgray" {...props} />
+    <hr className="my-6 border-t border-(--border)" {...props} />
   ),
 
   ol: (props) => (
-    <ol className="pl-5 text-[var(--secondary)] mb-5 list-decimal" {...props} />
+    <ol className={`${SOURCE_SERIF.className} pl-5 text-(--secondary-text) mb-5 list-decimal text-[17px] leading-[1.65]`} {...props} />
   ),
 
   ul: (props) => (
-    <ul className="pl-5 mb-5 text-[var(--secondary)] list-disc" {...props} />
+    <ul className={`${SOURCE_SERIF.className} pl-5 mb-5 text-(--secondary-text) list-disc text-[17px] leading-[1.65]`} {...props} />
   ),
 
   li: (props) => <li className="mb-2" {...props} />,
 
   img: (props) => (
-    <img className="rounded-lg max-w-full h-auto" {...props} />
+    <img className="max-w-full h-auto" {...props} />
   ),
 
   figure: (props) => (
@@ -57,12 +53,12 @@ const mdxComponents = {
   ),
 
   figcaption: (props) => (
-    <figcaption className="mt-2 text-sm text-center text-gray-500 italic" {...props} />
+    <figcaption className={`${JETBRAINS_MONO.className} mt-2 text-[10px] tracking-widest uppercase text-center text-(--tertiary-text)`} {...props} />
   ),
 
   blockquote: (props) => (
     <blockquote
-      className="relative pl-6 pr-4 py-4 pb-1 mb-6 bg-[var(--highlight)] border-l-4 border-[var(--background)] rounded-md text-sm text-[var(--secondary)] italic shadow-sm"
+      className={`${SOURCE_SERIF.className} pl-5 pr-4 py-3 mb-6 border-l-2 border-(--accent) text-(--secondary-text) italic text-[17px] leading-[1.65] [&>p]:mb-0`}
       {...props}
     />
   ),
@@ -71,12 +67,11 @@ const mdxComponents = {
     if (className && className.includes("katex")) {
       return (
         <span
-          className={`relative inline-block rounded-md p-2 bg-[var(--highlight)] text-[var(--secondary)] ${className}`}
+          className={`relative inline-block rounded-md p-2 bg-(--button-highlight) text-(--secondary-text) ${className}`}
           {...props}
         />
       );
     }
-
     return <span className={className} {...props} />;
   },
 };

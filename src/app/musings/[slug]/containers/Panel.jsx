@@ -33,21 +33,21 @@ const Panel = ({ currentPost, posts }) => {
                 >
                     Musings
                 </motion.h2>
-                <section aria-label="Current post" className="border-b border-[var(--border)]">
+                <section aria-label="Current post" className="border-b border-(--border)">
                     <motion.h3
                         variants={slideUp}
-                        className="pl-3 mb-4 text-base font-light text-[var(--secondary-text)]"
+                        className="pl-3 mb-4 text-base font-light text-(--secondary-text)"
                     >
                         You're reading:
                     </motion.h3>
                     <motion.article
                         variants={slideSpring["left"]}
-                        className="inline-flex items-start justify-start w-full gap-4 p-3 mb-4 rounded-lg bg-[var(--fg)]"
+                        className="inline-flex items-start justify-start w-full gap-4 p-3 mb-4 rounded-lg bg-(--fg)"
 
                     >
                         <div className="inline-flex flex-col items-start justify-start text-base font-light text-left grow">
-                            <h4 className="text-[var(--primary-text)]">{currentPost.title}</h4>
-                            <div className="mt-1 text-[var(--secondary-text)] flex flex-row gap-2">
+                            <h4 className="text-(--primary-text)">{currentPost.title}</h4>
+                            <div className="mt-1 text-(--secondary-text) flex flex-row gap-2">
                                 <h4>{currentPost["date-stylized"]}</h4>
                                 {" ⋅ "}
                                 <span>{currentPost.category}</span>
@@ -76,11 +76,11 @@ const Panel = ({ currentPost, posts }) => {
                                     variants={slideSpring["left"]}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="block w-full gap-4 p-3 rounded-lg hover:bg-[var(--fg)]"
+                                    className="block w-full gap-4 p-3 rounded-lg hover:bg-(--fg)"
                                 >
                                     <article className="inline-flex flex-col items-start justify-start text-base font-light text-left grow">
-                                        <h4 className="text-[var(--secondary-text)]">{post.title}</h4>
-                                        <div className="mt-1 text-[var(--tertiary-text)] flex flex-row gap-2">
+                                        <h4 className="text-(--secondary-text)">{post.title}</h4>
+                                        <div className="mt-1 text-(--tertiary-text) flex flex-row gap-2">
                                             <h4>{post["date-stylized"]}</h4>
                                             {" ⋅ "}
                                             <span>{post.category}</span>

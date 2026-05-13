@@ -1,24 +1,9 @@
 const ROUTES = [
-    {
-        href: '/',
-        icon: "user"
-    },
-    {
-        href: '/projects',
-        icon: "settings"
-    },
-    {  
-        href: '/work',
-        icon: "briefcase"
-    },
-    {
-        href: '/edu',
-        icon: "graduation-cap"
-    },
-    {
-        href: '/musings',
-        icon: "pencil-line"
-    },
+    { href: '/',         icon: "user",        label: "Home"     },
+    { href: '/projects', icon: "settings",    label: "Projects" },
+    { href: '/resume',   icon: "file-text",   label: "Résumé"   },
+    { href: '/musings',  icon: "pencil-line", label: "Musings"  },
+    { href: '/now',      icon: "clock",       label: "Now"      },
 ]
 
 export default ROUTES;

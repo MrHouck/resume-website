@@ -10,11 +10,32 @@ import 'katex/dist/katex.min.css';
 
 
 export const metadata = {
-  title: "Nathan Houck",
-  description: "Nathan Houck is a motivated aerospace engineering student open for opportunities.",
+  metadataBase: new URL("https://nathanhouck.com"),
+  title: {
+    default: "Nathan Houck",
+    template: "%s — Nathan Houck",
+  },
+  description: "Aerospace engineering student at Embry-Riddle studying astronautics, aerodynamics, and experimental methods.",
+  manifest: "/favicon-assets/manifest.webmanifest",
   icons: {
-    icon: "./favicon.ico"
-  }
+    icon: [
+      { url: "/favicon-assets/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-assets/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-assets/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-assets/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: { url: "/favicon-assets/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+  },
+  openGraph: {
+    siteName: "Nathan Houck",
+    images: [{ url: "/headshot.jpg", width: 800, alt: "Nathan Houck" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "https://nathanhouck.com",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -26,8 +47,14 @@ export default function RootLayout({ children }) {
         <body className={`${FAMILY.className} w-screen overflow-x-hidden h-screen text-[var(--primary-text)] bg-[var(--bg)] transition-colors`}>
         <ThemeProvider attribute="class" className="dark" suppressHydrationWarning>
           <AppProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-(--accent) focus:text-white focus:rounded focus:text-sm"
+            >
+              Skip to main content
+            </a>
             <Navbar/>
-            
+
             {children}
 
             </AppProvider>

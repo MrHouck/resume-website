@@ -1,27 +1,23 @@
-import Image from "next/image";
 import PageWrapper from "@/components/PageWrapper";
-import RegularLayout from "@/components/RegularLayout";
-import Main from "@/containers/Main";
-
-import { slideLeft, slideUp } from "@/utils/animations";
-import { ABOUT_ME } from "@/utils/constants";
-import SectionPointer from "@/components/SectionPointer";
-import { motion } from "motion/react";
-import NavButton from "@/components/NavButton";
 import ProjectsContainer from "@/containers/Projects";
 
+export const metadata = {
+  title: "Projects",
+  description: "Aerospace engineering projects by Nathan Houck — aerodynamics research, submarine cooling systems, and jet engine propulsion.",
+  alternates: { canonical: "https://nathanhouck.com/projects" },
+  openGraph: {
+    title: "Projects — Nathan Houck",
+    description: "Aerodynamics research, submarine cooling systems, and jet engine propulsion.",
+    url: "https://nathanhouck.com/projects",
+  },
+};
 
 export default function Projects() {
-    return (
-        <PageWrapper>
-            <RegularLayout>
-                <div className="flex flex-col items-center justify-center lg:min-h-[85vh] first:mb-5 last:mb-0">
-                    <NavButton pageName="About Me" direction="up" href="/" />
-                    <ProjectsContainer />
-                    <NavButton pageName="Work Experience" direction="down" href="/work" />
-
-                </div>
-            </RegularLayout>
-        </PageWrapper>
-    );
+  return (
+    <PageWrapper>
+      <div className="px-5 pt-10 pb-20 lg:pb-8 w-full max-w-240">
+        <ProjectsContainer />
+      </div>
+    </PageWrapper>
+  );
 }

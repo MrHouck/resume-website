@@ -1,48 +1,50 @@
 "use client";
 
-import {motion} from "motion/react"
-import Image from "next/image";
-import { slideUp } from "@/utils/animations";
-import { DM_MONO_FAMILY, EDUCATION } from "@/utils/constants";
-import ActionButtons from "@/containers/ActionButtons";
-import SectionPointer from "@/components/SectionPointer";
+import { motion } from "motion/react";
+import { slideUp, staggerParent } from "@/utils/animations";
+import { JETBRAINS_MONO, SOURCE_SERIF, EDUCATION } from "@/utils/constants";
 
-export default function Education(){
-    return (
-        <main className="relative flex flex-col items-center self-stretch gap-4 pt-10">
-            {EDUCATION.map((education, i) => (
-                <div key={i}>
-                    <motion.div 
-                        initial={{opacity: 0, translateX: 50}}
-                        animate={{opacity: 1, translateX: 0}}
-                        transition={{duration: 0.3, delay: i*0.5}}
-                    >
-                        <section className="flex flex-col items-center">
-                            <div className="flex flex-row justify-between items-center w-full border-b border-[var(--border)] pb-4 mb-4 lg:p-0 lg:mb-0 lg:top-auto">
-                                <motion.h2 
-                                    className="text-lg font-light tracking-widest uppercase text-[var(--primary-text)] lg:tracking-normal lg:normal-case lg:text-left mr-4"
-                                    initial={{opacity:0, translateX: -25}}
-                                    animate={{opacity:1, translateX: 0}}
-                                    transition={{duration: 1, delay: i/2}}
-                                >
-                                    <a href={education.url}>{education.school}</a>
-                                </motion.h2>
-                                <div className="flex flex-col text-right">
-                                    <p className="text-[var(--nav-button)]">{education.gpa}</p>
-                                    <p className="text-[var(--background-text)] text-sm">{education.time}</p>
-                                </div>
-                            </div>
+export default function Education() {
+  return (
+    <section className="flex flex-col w-full pt-10">
+      <h2 className={`${SOURCE_SERIF.className} text-[28px] font-normal text-(--primary-text) border-b border-(--border) pb-4 mb-2`}>
+        Education
+      </h2>
+      <motion.div className="flex flex-col gap-6 pt-4" variants={staggerParent(0.08)}>
+        {EDUCATION.map((edu) => (
+          <motion.div key={edu.id} variants={slideUp} className="flex flex-col gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5">
+              <a
+                href={edu.url}
+                className={`${SOURCE_SERIF.className} text-[18px] font-normal text-(--primary-text) hover:text-(--accent) transition-colors`}
+              >
+                {edu.school}
+              </a>
+              <p className={`${JETBRAINS_MONO.className} text-[10px] tracking-wide text-(--tertiary-text) sm:text-right`}>
+                GPA {edu.gpa} · {edu.time}
+              </p>
+            </div>
 
-                            <ul className="pt-0 text-[var(--secondary-text)] mt-2 list-disc list-inside space-y-2 self-start">
-                                {education.activities.map((activity, i) => (
-                                    <li key={i}>{activity}</li>
-                                ))}
+            {edu.honors.length > 0 && (
+              <ul className="flex flex-col gap-0.5">
+                {edu.honors.map((h, i) => (
+                  <li key={i} className={`${JETBRAINS_MONO.className} text-[10px] tracking-wide uppercase text-(--accent)`}>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            )}
 
-                            </ul>
-                        </section>
-                    </motion.div>
-                </div>
-            ))}
-        </main>
-    )
+            <ul className="list-disc list-inside flex flex-col gap-1 pt-1">
+              {edu.activities.map((activity, i) => (
+                <li key={i} className="text-[13px] text-(--secondary-text)">
+                  {activity}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
 }
